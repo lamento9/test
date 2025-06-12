@@ -1,0 +1,647 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* 這是 CSS Reset 的結束 */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  max-width: 1920px;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* 頁首 */
+
+.blog-header {
+  width: 100%;
+  padding: 24px 0;
+  margin: 0 auto;
+  font-size: 28px;
+  font-weight: 700;
+  background: #fbfbfb;
+}
+
+.blog-header ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none; /* 移除項目符號 */
+  padding: 0;
+  margin: 0;
+}
+
+.blog-header li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.blog-header li a:hover {
+  text-decoration: underline;
+}
+/* 人物介紹與最新文章 */
+
+.hero-left,
+.hero-right {
+  position: relative;
+  flex: 1;
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-web-camp/desktop/index/Hero%20Section2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.blog-hero {
+  display: flex;
+  width: 100%;
+  margin: 0 auto;
+  /* border: 2px solid red; 方便觀察範圍用 */
+}
+
+.person,
+.background {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.background {
+  z-index: -1;
+}
+
+.blog-title {
+  z-index: 1;
+  padding: 20px 80px;
+  /* border: 2px solid #0027d5; 方便觀察範圍用 */
+}
+
+.blog-title h1 {
+  color: #0027d5;
+  font-size: clamp(24px, 8vw, 120px); /* 最小 24px，最大 120px */
+  font-weight: 900;
+}
+
+.blog-title p {
+  color: #0027d5;
+  font-size: clamp(16px, 3vw, 28px); /* 最小 16px，最大 28px */
+  font-weight: 700;
+}
+
+/* 最新文章區塊 */
+
+.blog-newpost {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+  max-height: 640px;
+  gap: 24px;
+  margin: 0 auto;
+  border: 1px solid #6c757d; /* 添加完整的邊線樣式 */
+}
+
+.blog-newpost-image,
+.blog-newpost-content {
+  flex: 1; /* 平分空間 */
+  max-width: 50%; /* 最大寬度為父容器的一半 */
+}
+
+.blog-newpost-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-newpost-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.blog-newpost-container {
+  max-width: 636px;
+  width: 100%;
+  /* background-color: lightgreen; 方便觀察範圍 */
+}
+
+.blog-newpost-container p,
+.blog-newpost-container h2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog-content {
+  padding: 80px 0;
+  width: 100%;
+  border: 1px solid #6c757d;
+  background: #fbfbfb;
+}
+
+/* 搜尋欄位 */
+.blogpost-search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 1296px;
+  margin: 0 auto;
+  /* background: #696969; */ /* 方便觀察範圍 */
+}
+
+.blogpost-search-bar form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 416px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 4px 8px;
+}
+
+.blogpost-search-bar input {
+  flex: 1;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  padding: 8px;
+}
+
+.blogpost-search-bar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4b4b4b;
+  padding: 6px;
+}
+
+.blogpost-search-bar button:hover {
+  color: #000000;
+}
+
+/* 卡片父層容器 section */
+.blogpost-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1296px;
+  gap: 80px 24px;
+  padding: clamp(10px, 10vw, 40px) 0;
+  margin: 0 auto;
+  /* background-color: lightblue; 方便觀察範圍 */
+}
+
+/* 單張卡片樣式 */
+.blogpost-card {
+  flex: 0 1 416px;
+  width: 100%;
+  /* background-color: #fff2e5; 方便觀察範圍 */
+}
+
+/* 圖片樣式 */
+.post-image {
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+/* 日期與 hashtag */
+.post-date {
+  display: block;
+  font-size: 16px;
+  color: black;
+  margin: 4px 0;
+}
+
+.hashtag {
+  font-size: 24px;
+  color: #0027d5;
+  text-decoration: none;
+}
+
+.hashtag-badge {
+  display: inline-block;
+  background-color: #0027d5;
+  color: white;
+  font-size: 16px;
+  border-radius: 40px;
+  padding: 6px 12px;
+  margin: 0 8px;
+}
+
+.hashtag:hover {
+  text-decoration: underline;
+}
+
+/* 標題樣式 */
+.post-title {
+  font-size: 28px;
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-title:hover {
+  text-decoration: underline;
+}
+
+/* 內文與閱讀內文 */
+.blogpost-card p {
+  font-size: 16px;
+  color: #4b4b4b;
+  width: 100%;
+  height: 48px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 8px 0;
+}
+
+.read-more a {
+  display: inline-block;
+  font-size: 14px;
+  color: #4b4b4b;
+  text-decoration: none;
+  border: 1px solid #4b4b4b;
+  border-radius: 40px;
+  padding: 8px 16px;
+  margin-top: 8px;
+}
+
+.read-more:hover a {
+  text-decoration: underline;
+}
+
+.read-more:visited a {
+  color: #4b4b4b;
+}
+
+/* 換頁 */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fbfbfb;
+}
+
+.pagination ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 40px;
+  list-style: none;
+  padding: 8px 20px;
+}
+
+.pagination li {
+  display: inline-block;
+}
+
+.pagination button {
+  background: none;
+  border: none;
+  padding: 8px 0;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination .number-button {
+  width: 40px;
+  height: 40px;
+}
+
+.pagination .page-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination button:hover {
+  color: #0027d5;
+}
+
+.pagination button a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.pagination button a:hover {
+  text-decoration: underline;
+}
+
+/* 與我聯繫 */
+
+.contact-me {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 80px 0;
+  background-color: #fbfbfb;
+}
+
+.contact-me h2 {
+  font-size: 32px;
+  font-weight: 500;
+  color: #000;
+  max-width: 1036px;
+  width: clamp(300px, 100%, 1036px); /* 最小 300px，最大 1036px */
+}
+
+.social-media-icons ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 4px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.social-media-icons li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+}
+
+.media-button i {
+  display: inline-block;
+  height: 24px;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.media-button {
+  text-decoration: none;
+  color: #0027d5;
+}
+
+.media-button:visited {
+  color: #0027d5;
+}
+
+.media-button:active {
+  color: #0027d5;
+}
+
+/* 頁尾 */
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0;
+  background-color: #fff;
+}
+/* RWD */
+@media (min-width: 577px) and (max-width: 1295px) {
+  .blogpost-card-list {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: clamp(10px, 10vw, 40px) 24px;
+  }
+
+  .blogpost-card {
+    flex: 0 1 calc(50% - 12px);
+  }
+
+  .blogpost-search-bar {
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-me {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-hero {
+    flex-direction: column;
+  }
+  .hero-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .blog-newpost {
+    flex-direction: column;
+  }
+  .blog-newpost-image,
+  .blog-newpost-content {
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .blogpost-card-list {
+    max-width: 100%;
+    padding: clamp(10px, 10vw, 40px) 12px;
+    margin: 0 auto;
+  }
+
+  .blogpost-card {
+    flex: 1 1 100%;
+  }
+
+  .blogpost-search-bar {
+    padding: 0 12px;
+  }
+}
+
+/* 手機 */
+@media (max-width: 375px) {
+  .blog-hero {
+    flex-direction: column;
+  }
+  .hero-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .blog-newpost {
+    flex-direction: column;
+  }
+  .blog-newpost-image,
+  .blog-newpost-content {
+    max-width: 100%;
+    flex: 1 1 auto;
+  }
+
+  .blogpost-card-list {
+    max-width: 100%;
+    padding: clamp(10px, 10vw, 40px) 12px;
+    margin: 0 auto;
+  }
+
+  .blogpost-card {
+    flex: 1 1 100%;
+  }
+
+  .blogpost-search-bar {
+    padding: 0 12px;
+  }
+}
